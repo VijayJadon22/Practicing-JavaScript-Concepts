@@ -52,3 +52,30 @@
 
 // // traditionalFunction();
 // ArrowFunction();
+
+// function greet(name = "Vijay") {
+//     console.log(`Hello, ${name}`);
+// }
+
+// greet("Ajay");
+
+// const [x, y] = [1, 2];
+// console.log(x, y);
+
+// const obj = {
+//     name: "vijay",
+//     place:"Gwalior"
+// }
+// const { name, place } = obj;
+// console.log(name, place);
+
+const arr = [1, 2, 3];
+const newArr = [...arr, 4, 5];
+console.log(newArr);
+
+function add(...num) {
+    const ans = num.reduce((total, a) => total += a, 0);
+    console.log(ans);
+}
+
+add(2, 3, 4, 5);
