@@ -22,13 +22,33 @@
 // // console.log(a, b, c);  /* will throw an error b is not defined as let and const are block scope and cannot be accessed outside block but var can be accessed outside block*/
 // console.log(a);
 
-function printA() {
-    const a = "A is printing";
-    return function printB(){
-        const b = "B is prinitng";
-        console.log(a, b);
-    }
-}
+// function printA() {
+//     const a = "A is printing";
+//     return function printB(){
+//         const b = "B is prinitng";
+//         console.log(a, b);
+//     }
+// }
 
-const newFn = printA();
-newFn();
+// const newFn = printA();
+// newFn();
+
+// console.log(a);
+// var a = "Hello";
+
+// function traditionalFunction() {
+//     this.name = "vijay";
+//     setTimeout(function () {
+//         console.log(this.name);
+//     }, 1000)
+// }
+
+// function ArrowFunction() {
+//     this.name = "vijay";
+//     setTimeout(() => {
+//         console.log(this.name);
+//     }, 1000)
+// }
+
+// // traditionalFunction();
+// ArrowFunction();
