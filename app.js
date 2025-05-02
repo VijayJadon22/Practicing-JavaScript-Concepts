@@ -69,13 +69,30 @@
 // const { name, place } = obj;
 // console.log(name, place);
 
-const arr = [1, 2, 3];
-const newArr = [...arr, 4, 5];
-console.log(newArr);
+// const arr = [1, 2, 3];
+// const newArr = [...arr, 4, 5];
+// console.log(newArr);
 
-function add(...num) {
-    const ans = num.reduce((total, a) => total += a, 0);
-    console.log(ans);
-}
+// function add(...num) {
+//     const ans = num.reduce((total, a) => total += a, 0);
+//     console.log(ans);
+// }
 
-add(2, 3, 4, 5);
+// add(2, 3, 4, 5);
+
+
+// const fetchData = new Promise((resolve, reject) => {
+//     setTimeout(() => resolve("Data Fetched!"), 2000);
+// });
+
+// fetchData.then((data) => console.log(data));
+
+
+const fetchData = new Promise((resolve, error) => {
+    setTimeout(() => {
+        resolve("Data is fetched");
+    }, 3000)
+})
+
+fetchData.then(data => console.log(data));
+
