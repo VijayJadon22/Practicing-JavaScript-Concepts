@@ -130,3 +130,47 @@
 // }
 // newFn();
 
+// function xyz(){
+//     if (false) {
+//         var b = 25;
+//         const a = 23;
+
+//     }
+//     console.log("b", b);
+//     console.log("a", a);
+// }
+
+// xyz();
+
+
+// const fetchData = () => {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => resolve("Promise is resolved!"), 3000);
+//     })
+// }
+
+// fetchData()
+//     .then(data => console.log(data))
+//     .catch(error => console.log(error));
+
+// const fetchData = async () => {
+//     try {
+//         const response = await new Promise((resolve, reject) => setTimeout(() => resolve("Data Fetched"), 3000));
+//         console.log(response); // Output: "Data received!"
+//     } catch (error) {
+//         console.log(error); // Handles errors
+//     }
+// }
+
+// fetchData();
+
+// const apiCall1 = fetch("https://jsonplaceholder.typicode.com/todos/1");
+// const apiCall2 = fetch("https://jsonplaceholder.typicode.com/todos/2");
+// const apiCall3 = fetch("https://jsonplaceholder.typicode.com/todos/3");
+
+// Promise.all([apiCall1, apiCall2, apiCall3])
+//     .then(responses => Promise.all(responses.map((response) => response.json())))
+//     .then(data => data.forEach((res) => console.log(res.title)))
+//     .catch(error => console.log(error));
+
+
