@@ -111,15 +111,22 @@
 
 
 
-const obj = {
-    name: "Vijay",
-    greet: function (){
-        console.log(`Hello, ${this.name}`);
-    },
-    place: "gwalior",
-    greetAgain: () => {
-        console.log(`Hello, ${this.name}`);
-    }
-}
+// const obj = {
+//     name: "Vijay",
+//     greet: function (){
+//         console.log(`Hello, ${this.name}`);
+//     },
+//     place: "gwalior",
+//     greetAgain: () => {
+//         console.log(`Hello, ${this.name}`);
+//     }
+// }
 
-obj.greetAgain();
+// obj.greetAgain();
+
+
+// function newFn() {
+//     console.log(arguments);
+// }
+// newFn();
+
