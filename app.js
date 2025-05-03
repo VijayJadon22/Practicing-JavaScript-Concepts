@@ -174,3 +174,16 @@
 //     .catch(error => console.log(error));
 
 
+Promise.allSettled([
+    fetch("https://jsonplaceholder.typicode.com/todos/1"),
+    fetch("https://jsonplaceholder.typicode.com/tod/2"),
+    fetch("https://jsonplaceholder.typicode.com/todos/3")
+])
+    .then(result => Promise.all(result.map(res => res.status === "fulfilled" ? res.value.json() : res)))
+    .then(response => response.map((item, index) => {
+        if (item) {
+            console.log(item);
+        } else {
+            console.log(`Error: in API ${index}`)
+        }
+    }))
