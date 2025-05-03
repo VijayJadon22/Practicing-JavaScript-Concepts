@@ -88,11 +88,38 @@
 // fetchData.then((data) => console.log(data));
 
 
-const fetchData = new Promise((resolve, error) => {
-    setTimeout(() => {
-        resolve("Data is fetched");
-    }, 3000)
-})
+// const fetchData = new Promise((resolve, error) => {
+//     setTimeout(() => {
+//         resolve("Data is fetched");
+//     }, 3000)
+// })
 
-fetchData.then(data => console.log(data));
+// fetchData.then(data => console.log(data));
 
+// const greet = () => console.log("Hello");
+// greet();
+
+// function greet() {
+//     console.log(this);
+// }
+// greet();
+
+// const greet = () => {
+//     console.log(this);
+// }
+// greet();
+
+
+
+const obj = {
+    name: "Vijay",
+    greet: function (){
+        console.log(`Hello, ${this.name}`);
+    },
+    place: "gwalior",
+    greetAgain: () => {
+        console.log(`Hello, ${this.name}`);
+    }
+}
+
+obj.greetAgain();
