@@ -174,16 +174,38 @@
 //     .catch(error => console.log(error));
 
 
-Promise.allSettled([
-    fetch("https://jsonplaceholder.typicode.com/todos/1"),
-    fetch("https://jsonplaceholder.typicode.com/tod/2"),
-    fetch("https://jsonplaceholder.typicode.com/todos/3")
-])
-    .then(result => Promise.all(result.map(res => res.status === "fulfilled" ? res.value.json() : res)))
-    .then(response => response.map((item, index) => {
-        if (item) {
-            console.log(item);
-        } else {
-            console.log(`Error: in API ${index}`)
-        }
-    }))
+// Promise.allSettled([
+//     fetch("https://jsonplaceholder.typicode.com/todos/1"),
+//     fetch("https://jsonplaceholder.typicode.com/tod/2"),
+//     fetch("https://jsonplaceholder.typicode.com/todos/3")
+// ])
+//     .then(result => Promise.all(result.map(res => res.status === "fulfilled" ? res.value.json() : res)))
+//     .then(response => response.map((item, index) => {
+//         if (item) {
+//             console.log(item);
+//         } else {
+//             console.log(`Error: in API ${index}`)
+//         }
+//     }))
+
+// const containerDiv = document.querySelector(".container");
+const btn = document.querySelector(".button");
+const pressedP = document.querySelector(".incrementPressed");
+const countP = document.querySelector(".incrementCount");
+let pressedNum = 0;
+let countNum = 0;
+
+console.log(pressedNum);
+console.log(countNum);
+
+const debounceEffect = _.debounce(() => {
+    countNum += 1;
+    countP.innerText = countNum;
+}, 3000);
+
+btn.addEventListener("click", () => {
+    pressedNum += 1;
+    pressedP.innerText = pressedNum;
+    debounceEffect();
+})
+
