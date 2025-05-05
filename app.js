@@ -189,14 +189,14 @@
 //     }))
 
 // const containerDiv = document.querySelector(".container");
-const btn = document.querySelector(".button");
-const pressedP = document.querySelector(".incrementPressed");
-const countP = document.querySelector(".incrementCount");
-let pressedNum = 0;
-let countNum = 0;
+// const btn = document.querySelector(".button");
+// const pressedP = document.querySelector(".incrementPressed");
+// const countP = document.querySelector(".incrementCount");
+// let pressedNum = 0;
+// let countNum = 0;
 
-console.log(pressedNum);
-console.log(countNum);
+// console.log(pressedNum);
+// console.log(countNum);
 
 // const debounceEffect = _.debounce(() => {
 //     countNum += 1;
@@ -211,26 +211,26 @@ console.log(countNum);
 //     console.log(currTime - startTime);
 // }, 800)
 
-function clickDebounce(fn, delay) {
-    let timer;
+// function clickDebounce(fn, delay) {
+//     let timer;
 
-    return function () {
-        clearTimeout(timer);
-        timer = setTimeout(() => fn(), delay)
-    };
-}
+//     return function () {
+//         clearTimeout(timer);
+//         timer = setTimeout(() => fn(), delay)
+//     };
+// }
 
-const click = () => {
-    countNum += 1;
-    countP.innerText = countNum;
-}
-const debouncedClick = clickDebounce(click, 1000);
+// const click = () => {
+//     countNum += 1;
+//     countP.innerText = countNum;
+// }
+// const debouncedClick = clickDebounce(click, 1000);
 
-btn.addEventListener("click", () => {
-    pressedNum += 1;
-    pressedP.innerText = pressedNum;
-    // debounceEffect();
-    // throttleEffect();
-    debouncedClick();
-})
+// btn.addEventListener("click", () => {
+//     pressedNum += 1;
+//     pressedP.innerText = pressedNum;
+//     // debounceEffect();
+//     // throttleEffect();
+//     debouncedClick();
+// })
 
