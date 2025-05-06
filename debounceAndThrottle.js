@@ -6,14 +6,22 @@ const fetch = document.querySelector(".fetchTimes");
 let searchCount = 0;
 let fetchCount = 0;
 
-function throttled(fn,delay) {
-    let lastCall = 0;
+// function throttled(fn,delay) {
+//     let lastCall = 0;
+//     return function () {
+//         const now = Date.now();
+//         if (now - lastCall >= delay) {
+//             lastCall = now;
+//             return fn();
+//         }
+//     }
+// }
+
+function debounce(fn,delay) {
+    let timer;
     return function () {
-        const now = Date.now();
-        if (now - lastCall >= delay) {
-            lastCall = now;
-            return fn();
-        }
+        clearTimeout(timer);
+        timer = setTimeout(() => fn(), delay);
     }
 }
 
@@ -22,11 +30,13 @@ function fetched() {
     fetch.innerText = fetchCount;
 }
 
-const throttledFetch = throttled(fetched, 2000);
+// const throttledFetch = throttled(fetched, 2000);
+const debounceFetch = debounce(fetched, 2000);
 
 
 btn.addEventListener("click", () => {
     searchCount += 1;
     search.innerText = searchCount;
-    throttledFetch();
+    // throttledFetch();
+    debounceFetch();
 })
