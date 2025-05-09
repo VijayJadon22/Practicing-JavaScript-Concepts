@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar.jsx";
 import Cart from "./components/Cart.jsx";
 import { useCartContext } from "./context/CartContext.jsx";
 import Test from "./components/Test.jsx";
+import { useMemo, useState } from "react";
 
 // const reducer = (state, action) => {
 //   switch (action.type) {
@@ -22,6 +23,13 @@ import Test from "./components/Test.jsx";
 function App() {
   // const [state, dispatch] = useReducer(reducer, { count: 0 });
   const { setCount } = useCartContext();
+
+  const [counter, setCounter] = useState(2);
+
+  const value = useMemo(() => {
+    console.log("Calculated Power of counter");
+    return Math.pow(counter, 3);
+  }, [counter]);
   return (
     <div>
       {/* {/* <button onClick={() => dispatch({ type: "INCREMENT" })}>
@@ -41,7 +49,11 @@ function App() {
         Decrement
       </button>
       <button onClick={() => setCount(0)}>Reset</button>
-      <Test />
+      {/* <Test /> */}
+      <p>Value is: {value}</p>
+      <button onClick={() => setCounter((counter) => counter + 2)}>
+        Change value of counter
+      </button>
     </div>
 
     // Part 3
