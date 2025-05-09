@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "./components/Navbar.jsx";
 import Cart from "./components/Cart.jsx";
 import { useCartContext } from "./context/CartContext.jsx";
+import Test from "./components/Test.jsx";
 
 // const reducer = (state, action) => {
 //   switch (action.type) {
@@ -38,6 +39,7 @@ function App() {
         Decrement
       </button>
       <button onClick={() => setCount(0)}>Reset</button>
+      <Test />
     </div>
   );
 }
