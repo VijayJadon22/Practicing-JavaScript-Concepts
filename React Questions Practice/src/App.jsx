@@ -24,7 +24,7 @@ function App() {
   const { setCount } = useCartContext();
   return (
     <div>
-      {/* <button onClick={() => dispatch({ type: "INCREMENT" })}>
+      {/* {/* <button onClick={() => dispatch({ type: "INCREMENT" })}>
         Increment Count
       </button>
       <h2>Count is : {state.count}</h2>
@@ -32,6 +32,8 @@ function App() {
         Decrement Count
       </button>
       <button onClick={() => dispatch({ type: "RESET" })}>Reset Count</button> */}
+
+      {/* Part 2 */}
       <Navbar />
       <Cart />
       <button onClick={() => setCount((count) => count + 1)}>Increment</button>
@@ -41,6 +43,11 @@ function App() {
       <button onClick={() => setCount(0)}>Reset</button>
       <Test />
     </div>
+
+    // Part 3
+    // <div>
+
+    // </div>
   );
 }
 
